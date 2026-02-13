@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Asmi ❤️</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(135deg,#ffe4e1,#fff0f5);
+}
+
+.card{
+  width:340px;
+  padding:22px;
+  border-radius:22px;
+  background:#ffffff;
+  text-align:center;
+  box-shadow:0 25px 60px rgba(0,0,0,0.15);
+  position:relative;
+}
+
+.card img{
+  width:100%;
+  border-radius:18px;
+  margin-bottom:16px;
+}
+
+h1{
+  font-size:26px;
+  margin:10px 0 5px;
+  color:#ff5c8a;
+}
+
+.from{
+  font-size:14px;
+  color:#888;
+  margin-bottom:18px;
+}
+
+.buttons{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  position:relative;
+}
+
+#yesBtn{
+  padding:14px;
+  border:none;
+  border-radius:25px;
+  font-size:16px;
+  cursor:pointer;
+  color:white;
+  background:linear-gradient(90deg,#ff2f92,#ff9a3c);
+}
+
+#noBtn{
+  padding:14px;
+  border:none;
+  border-radius:25px;
+  font-size:16px;
+  cursor:pointer;
+  background:#e8f2ff;
+  color:#333;
+  position:relative;
+}
+
+#result{
+  margin-top:16px;
+  font-size:18px;
+  color:#ff2f92;
+  font-weight:600;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <!-- You can change this image to any GIF or photo -->
+  <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnc1cHllMG03NWZlODk2cWZ6M3BxOHhkM2dzODQ0NnBub3p6ZW54biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KtpXLGFRDScms/giphy.gif" alt="cute">
+
+  <h1>Would you like to be my Valentine, Asmi? 💖</h1>
+  <div class="from">— from Sanchit</div>
+
+  <div class="buttons">
+    <button id="yesBtn">YES</button>
+    <button id="noBtn">NO</button>
+  </div>
+
+  <div id="result"></div>
+
+</div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const result = document.getElementById("result");
+const card = document.querySelector(".card");
+
+noBtn.addEventListener("mouseenter", () => {
+
+  const cardRect = card.getBoundingClientRect();
+
+  const maxX = cardRect.width - noBtn.offsetWidth;
+  const maxY = cardRect.height - noBtn.offsetHeight;
+
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
+
+  noBtn.style.position = "absolute";
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+});
+
+yesBtn.addEventListener("click", () => {
+  result.innerHTML = "Yayyy Asmi said YES 💕🥹";
+});
+</script>
+
+</body>
+</html>
